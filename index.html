@@ -8,14 +8,25 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles/buttons.css">
     <link rel="stylesheet" href="styles/fonts.css">
-    
+
 </head>
   <body>
-    <header></header>
+    <section id="loading-screen" class="loading-bg d-none">
+        <h2 class="loading-text">Lade Pokémon... Bitte warten!</h2>
+    </section>
+     <header>
+      <nav>
+        <h1>P<img src="assets/img/alanyadk-pokemon-1536849_640.png" />kedex</h1>
+      </nav>
+    </header>
     <main>
         <section id="pokedex"></section>
+        <button onclick="loadMorePokemon()">Mehr laden</button>
     </main>
     <footer></footer>
+    <section id="overlay" class="overlay-bg d-none">
+        <div id="overlay-content"></div>
+    </section>
     <script src="scripts/templates.js"></script>
     <script src="script.js"></script>
   </body>

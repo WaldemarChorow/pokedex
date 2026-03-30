@@ -1,3 +1,19 @@
+@font-face {
+    font-family: GillSans Condensed;
+    src: url(/assets/fonts/gill-sans-2/GillSans\ Condensed.otf);
+}
+
 .text-capitalize {
   text-transform: capitalize;
+}
+
+h1 {
+  color: white;
+  text-shadow: #09212a;
+  font-size: 72px;
+  margin: 0 0;
+}
+
+h2{
+    text-align: center;
 }

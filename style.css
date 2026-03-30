@@ -1,8 +1,145 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #06171e;
+  font-family: "Figtree";
+  background-color: #1c1380;
+  color: white;
+  font-family: "GillSans Condensed";
+  }
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 83px;
+  padding-top: 15px;
+  background-color: black;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+nav img{
+    width: 64px;
+    height: auto;
+}
+
+main {
+  width: 100%;
+  max-width: 1440px;
+  height: 100vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(assets/img/32213210_7917587.jpg);
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  flex: 1;
+}
+
+#pokedex {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  border-radius: 25px;
+  margin: 34px 0;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.loading-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Leicht durchsichtiges Weiß */
+    z-index: 9999; /* Extrem hoch, damit es garantiert über ALLEM liegt! */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-text {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.pokemonCard {
+  background-color: rgba(51, 29, 18, 0.4);
+  max-width: 130px;
+  width: 90%;
+  min-height: 260px;
+  height: 130px;
+
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
 .grass { background-color: #78C850; }
 .fire  { background-color: #F08030; }
 .water { background-color: #6890F0; }
 
+
+
 .pokemonCard:hover{
-    border: 3px solid white;
+    cursor: pointer;
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 0;
+}
+
+.overlay-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;  
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-none {
+    display: none; 
+}
+
+.bigPokemonCard {
+    position: relative;
+   
+}
+
+.close-btn {
+    position: absolute; 
+    right: 15px;        
+    font-size: 24px;    
+    font-weight: bold;
+    background: none;   
+    border: none;       
+    cursor: pointer;    
 }
