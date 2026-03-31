@@ -40,7 +40,7 @@ nav img{
 main {
   width: 100%;
   max-width: 1440px;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -72,8 +72,7 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.8); /* Leicht durchsichtiges Weiß */
-    z-index: 9999; /* Extrem hoch, damit es garantiert über ALLEM liegt! */
+    background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,32 +83,78 @@ main {
     font-weight: bold;
 }
 
-.pokemonCard {
-  background-color: rgba(51, 29, 18, 0.4);
-  max-width: 130px;
-  width: 90%;
-  min-height: 260px;
-  height: 130px;
-
-  border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
+#pokedex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;            
+    min-width: 320px;
+    max-width: 1440px;  
 }
 
-.grass { background-color: #78C850; }
-.fire  { background-color: #F08030; }
-.water { background-color: #6890F0; }
-
-
-
-.pokemonCard:hover{
+.pokemonCard {
+    position: relative;
+    width: 280px;
+    height: 200px;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
-    margin: 0;
-    padding: 0;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+}
+
+.pokemonCard:hover {
+    transform: scale(1.05);
+}
+
+.card-id {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.card-name {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.card-main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-grow: 1;
+}
+
+.card-types {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.type-badge {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-image-container img {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
 }
 
 .overlay-bg {
