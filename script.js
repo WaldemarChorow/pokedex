@@ -47,11 +47,27 @@ function loadMorePokemon(){
     let pokemonDetail = await response.json();
     let type1 = pokemonDetail.types[0].type.name;
     let type2 = "";
+    let attack1 = "Kein Angriff";
+    let attack2 = "";
+    let attack3 = "";
+    
     if (pokemonDetail.types.length > 1) {
         type2 = pokemonDetail.types[1].type.name;
     }
+    if (pokemonDetail.moves.length > 0) {
+    attack1 = pokemonDetail.moves[0].move.name;
+    }  
+    if (pokemonDetail.moves.length > 1) {
+    attack2 = pokemonDetail.moves[1].move.name;
+    }
+    if (pokemonDetail.moves.length > 1) {
+    attack3 = pokemonDetail.moves[2].move.name;
+    }
     document.getElementById('overlay-content').innerHTML = getPokemonBigCardTemplate(
-    pokemonDetail.name, pokemonDetail.id, pokemonDetail.sprites.other['official-artwork'].front_default, type1, type2
+    pokemonDetail.name, pokemonDetail.id, pokemonDetail.sprites.other['official-artwork'].front_default, type1, type2, 
+    pokemonDetail.stats[0].base_stat, pokemonDetail.height, pokemonDetail.weight, pokemonDetail.moves[0].move.name,
+    pokemonDetail.moves[1].move.name,  pokemonDetail.moves[2].move.name, pokemonDetail.stats[1].stat.name, pokemonDetail.stats[1].base_stat,
+    pokemonDetail.stats[2].stat.name, pokemonDetail.stats[2].base_stat, pokemonDetail.stats[5].stat.name, pokemonDetail.stats[5].base_stat
     );   
 }
 

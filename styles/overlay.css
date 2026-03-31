@@ -1,0 +1,118 @@
+.overlay-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-none {
+  display: none;
+}
+
+.bigPokemonCard {
+  position: relative;
+  border-radius: 25px;
+  width: 320px;
+  height: 460px;
+  border: 16px solid yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+}
+
+.bigPokemonCardHead {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(0, 0, 0, 0,4);
+}
+
+.bigPokemonCardNameHP {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
+}
+
+.bigPokemonCardContent {
+  width: 90%;
+  height: 90%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemonBigCardSize {
+  width: 90%;
+  height:15px;
+  color: black;
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+  margin-top: 3px;
+  padding: 0;
+  gap: 5px;
+}
+
+.pokemonBigCardSize p {
+  padding: 0%;
+  margin: 0;
+}
+
+.pokemonImageOverlayCard {
+  width: 260px;
+  height: 160px;
+  border: 8px solid yellow;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.pokemonBigCardAttacks{
+    width: 90%;
+    color: black;
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.pokemonBigCardAttacks h3{
+    padding: 0;
+    margin: 0;
+}
+
+.line{
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.pokemonBigCardStats{
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.pokemonBigCardStats h3{
+    padding: 0;
+    margin: 0%;
+}
+
+.pokemonImageOverlayCard img {
+  width: 160px;
+  height: auto;
+}

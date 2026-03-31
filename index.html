@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/alanyadk-pokemon-1536849_640.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles/buttons.css">
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/elementColors.css">
+    <link rel="stylesheet" href="styles/overlay.css">
 
 </head>
   <body>
@@ -22,9 +23,11 @@
     </header>
     <main>
         <section id="pokedex"></section>
-        <button onclick="loadMorePokemon()">Mehr laden</button>
+        <button class="btn-moreLoad" onclick="loadMorePokemon()">Mehr laden</button>
     </main>
-    <footer></footer>
+    <footer>
+        © copyright
+    </footer>
     <section id="overlay" class="overlay-bg d-none">
         <div id="overlay-content"></div>
     </section>
