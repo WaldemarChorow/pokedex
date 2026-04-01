@@ -40,7 +40,7 @@ loadPokemons();
 
 function loadMorePokemons(){
     currentOffset += 20;
-    loadPokemons();
+    loadPokemon();
 }
 
 async function fetchPokemonData(id){
