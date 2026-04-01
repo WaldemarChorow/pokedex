@@ -112,7 +112,18 @@
     margin: 0%;
 }
 
+.pokemonBigCardTypes{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding-top: 15px;
+}
+
 .pokemonImageOverlayCard img {
   width: 160px;
   height: auto;
+}
+
+.no-scroll {
+  overflow: hidden;
 }

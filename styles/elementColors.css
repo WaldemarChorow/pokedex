@@ -1,7 +1,7 @@
 /* --- Pokémon Typ-Farben --- */
 
 .normal { background-color: #919191; }
-.fire { background-color: #E62829; }
+.fire { background: linear-gradient(90deg,rgba(255, 0, 0, 1) 0%, rgba(250, 150, 0, 1) 65%, rgba(237, 221, 83, 1) 100%); }
 .water { background-color: #2980EF; }
 .electric { background-color: #FAC000; }
 .grass { background-color: #3FA129; }

@@ -16,37 +16,42 @@ function getPokemonCardTemplate(pokemonName, pokemonId, pokemonImage, type1, typ
     `;
 }
 
-function getPokemonBigCardTemplate(pokemonName, pokemonId, pokemonImage, type1, type2, pokemonHP, 
-    pokemonHeight, pokemonWeight, pokemonAttack1, pokemonAttack2, pokemonAttack3, pokemonStatAttackName, 
-    pokemonStatAttackValue, pokemonStatDefenceName, pokemonStatDefenceValue, pokemonStatSpeedName, pokemonStatSpeedValue) {
+function getPokemonBigCardTemplate(pokemonData) {
+    const {
+        name, id, url, types, height, weight, moves, stats
+    } = pokemonData;
+
     return /*html*/`
-        <div class="bigPokemonCard text-capitalize ${type1}">
+        <div class="bigPokemonCard text-capitalize ${types[0].type.name}">
             <div class="bigPokemonCardContent">
                 <div class="bigPokemonCardHead">
-                    <h2>#${pokemonId}</h2>
+                    <h2>#${id}</h2>
                     <button class="close-btn" onclick="closeOverlay()">X</button>
                 </div>
                 <div class="bigPokemonCardNameHP">
-                    <h2>${pokemonName}</h2>
-                    <h2>${pokemonHP}HP</h2>
+                    <h2>${name}</h2>
+                    <h2>${stats[0].base_stat}HP</h2>
                 </div>
                  <div class="pokemonImageOverlayCard">
-                        <img src="${pokemonImage}" alt="pokemon">
+                        <img src="${url}" alt="pokemon">
                 </div>
                 <div class="pokemonBigCardSize">
-                    <p>${type1} Pokémon. Height: ${pokemonHeight}"</p>
-                    <p>Weight: ${pokemonWeight} lbs.</p>
+                    <p>${types[0].type.name} Pokémon. Height: ${height}"</p>
+                    <p>Weight: ${weight} lbs.</p>
                 </div>
                 <div class="pokemonBigCardAttacks">
-                    <h3>Attack: <br> ${pokemonAttack1} | ${pokemonAttack2} | ${pokemonAttack3}</h3>
+                    <h3>Attack: <br> ${moves[0].move.name} | ${moves[1].move.name} | ${moves[2].move.name}</h3>
                 </div>
                 <div class="line"></div>
                 <div class="pokemonBigCardStats">
-                    <h3>Stats: ${pokemonStatAttackName}: ${pokemonStatAttackValue} | ${pokemonStatDefenceName}: ${pokemonStatDefenceValue} | ${pokemonStatSpeedName}: ${pokemonStatSpeedValue}</h3>
+                    <h3>Stats: ${stats[1].stat.name}: ${stats[1].base_stat} | ${stats[2].stat.name}: ${stats[2].base_stat} | ${stats[5].stat.name}: ${stats[5].base_stat}</h3>
                 </div>
                 <div class="line"></div>
+                <div class="pokemonBigCardTypes">
+                    <span class="type-badge">${types[0].type.name}</span>
+                    ${types[1] ? `<span class="type-badge">${types[1].type.name}</span>` : ''}
+                </div>
             </div>
-            <p>${type1} ${type2}</p>
         </div>
     `;
 }

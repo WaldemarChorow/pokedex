@@ -5,19 +5,22 @@ function timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function loadPokemon(){
+async function loadPokemons(){
     document.getElementById('loading-screen').classList.remove('d-none');
-    let url = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${currentOffset}`;
-    let response = await fetch(url);    
-    let responseAsJson = await response.json();
-    let pokemonList = responseAsJson.results;
-    
+    const pokemonList = await fetchPokemons();
     for (let i = 0; i < pokemonList.length; i++) {
         const element = pokemonList[i];
         await renderSinglePokemon(element.url);     
      }
      await timeout(1000);
      document.getElementById('loading-screen').classList.add('d-none');
+}
+
+async function fetchPokemons(){
+    let url = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${currentOffset}`;
+    let response = await fetch(url);    
+    let responseAsJson = await response.json();
+    return responseAsJson.results;
 }
 
 async function renderSinglePokemon(url){
@@ -33,44 +36,44 @@ async function renderSinglePokemon(url){
     console.log(pokemonDetail);
 }
 
-loadPokemon();
+loadPokemons();
 
-function loadMorePokemon(){
+function loadMorePokemons(){
     currentOffset += 20;
-    loadPokemon();
+    loadPokemons();
+}
+
+async function fetchPokemonData(id){
+    let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    let response = await fetch(url);     
+    let pokemonDetail = await response.json();
+    return pokemonDetail;
+}
+
+function preparePokemonData(pokemonDetail){
+   
+    return {name:pokemonDetail.name,
+            id:pokemonDetail.id, 
+            url:pokemonDetail.sprites.other['official-artwork'].front_default, 
+            types:pokemonDetail.types,
+            height:pokemonDetail.height, 
+            weight:pokemonDetail.weight,
+            moves:pokemonDetail.moves,
+            stats:pokemonDetail.stats
+        }
 }
 
  async function openOverlay(id){
     document.getElementById('overlay').classList.remove('d-none')
-    let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    let response = await fetch(url);    
-    let pokemonDetail = await response.json();
-    let type1 = pokemonDetail.types[0].type.name;
-    let type2 = "";
-    let attack1 = "Kein Angriff";
-    let attack2 = "";
-    let attack3 = "";
-    
-    if (pokemonDetail.types.length > 1) {
-        type2 = pokemonDetail.types[1].type.name;
-    }
-    if (pokemonDetail.moves.length > 0) {
-    attack1 = pokemonDetail.moves[0].move.name;
-    }  
-    if (pokemonDetail.moves.length > 1) {
-    attack2 = pokemonDetail.moves[1].move.name;
-    }
-    if (pokemonDetail.moves.length > 1) {
-    attack3 = pokemonDetail.moves[2].move.name;
-    }
+    document.body.classList.add('no-scroll');
+    const pokemonData = await fetchPokemonData(id);
+    const preparedPokemonData = preparePokemonData(pokemonData);
     document.getElementById('overlay-content').innerHTML = getPokemonBigCardTemplate(
-    pokemonDetail.name, pokemonDetail.id, pokemonDetail.sprites.other['official-artwork'].front_default, type1, type2, 
-    pokemonDetail.stats[0].base_stat, pokemonDetail.height, pokemonDetail.weight, pokemonDetail.moves[0].move.name,
-    pokemonDetail.moves[1].move.name,  pokemonDetail.moves[2].move.name, pokemonDetail.stats[1].stat.name, pokemonDetail.stats[1].base_stat,
-    pokemonDetail.stats[2].stat.name, pokemonDetail.stats[2].base_stat, pokemonDetail.stats[5].stat.name, pokemonDetail.stats[5].base_stat
+    preparedPokemonData
     );   
 }
 
 function closeOverlay() {
-    document.getElementById('overlay').classList.add('d-none');    
+    document.getElementById('overlay').classList.add('d-none');
+    document.body.classList.remove('no-scroll');
 }

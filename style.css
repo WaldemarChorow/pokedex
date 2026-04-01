@@ -81,11 +81,13 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10000;
 }
 
 .loading-text {
   font-size: 2rem;
   font-weight: bold;
+  color: black;
 }
 
 #pokedex {
