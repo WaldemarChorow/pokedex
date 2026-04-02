@@ -1,5 +1,6 @@
 
 let currentOffset = 0;
+let currentPokemonId = 1;
 
 function timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -40,7 +41,7 @@ loadPokemons();
 
 function loadMorePokemons(){
     currentOffset += 20;
-    loadPokemon();
+    loadPokemons();
 }
 
 async function fetchPokemonData(id){
@@ -64,16 +65,37 @@ function preparePokemonData(pokemonDetail){
 }
 
  async function openOverlay(id){
+    currentPokemonId = id; 
     document.getElementById('overlay').classList.remove('d-none')
     document.body.classList.add('no-scroll');
     const pokemonData = await fetchPokemonData(id);
     const preparedPokemonData = preparePokemonData(pokemonData);
     document.getElementById('overlay-content').innerHTML = getPokemonBigCardTemplate(
-    preparedPokemonData
-    );   
+    preparedPokemonData);
+    updateNavigationButtons();   
 }
 
 function closeOverlay() {
     document.getElementById('overlay').classList.add('d-none');
     document.body.classList.remove('no-scroll');
+}
+
+function nextPokemon(event) {
+    event.stopPropagation();
+    openOverlay(currentPokemonId + 1);
+}
+
+function previousPokemon(event) {
+    event.stopPropagation();
+    if (currentPokemonId > 1) {
+        openOverlay(currentPokemonId - 1);
+    }
+}
+
+function updateNavigationButtons() {
+    if (currentPokemonId === 1) {
+        document.getElementById('btn-prev').classList.add('d-none');
+    } else {
+        document.getElementById('btn-prev').classList.remove('d-none');
+    }
 }

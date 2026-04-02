@@ -14,19 +14,23 @@
 </head>
   <body>
     <section id="loading-screen" class="loading-bg d-none">
-        <h2 class="loading-text">Lade Pokémon... Bitte warten!</h2>
+        <h2 class="loading-text">Load Pokémons... Pleace wait!</h2>
     </section>
      <header>
       <nav>
-        <h1>P<img src="assets/img/alanyadk-pokemon-1536849_640.png" />kedex</h1>
+        <h1>P<img src="assets/img/alanyadk-pokemon-1536849_640.png" />kédex</h1>
+            <div class="search-section">
+                <input id="searchField" class="searchField" placeholder="Find the Pokemon...." type="text" minlength="3">
+                <button onclick="searchPokemon()" class="searchPokemon-btn">Search</button>
+            </div>        
       </nav>
     </header>
     <main>
         <section id="pokedex"></section>
-        <button class="btn-moreLoad" onclick="loadMorePokemons()">Mehr laden</button>
+        <button class="btn-moreLoad" onclick="loadMorePokemons()">Load more Pokémons</button>
     </main>
     <footer>
-        © copyright
+        © copyright by Waldemar Chorow
     </footer>
     <section id="overlay" class="overlay-bg d-none">
         

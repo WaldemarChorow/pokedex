@@ -1,10 +1,10 @@
 /* --- Pokémon Typ-Farben --- */
 
 .normal { background-color: #919191; }
-.fire { background: radial-gradient(circle,rgba(255, 0, 0, 1) 0%, rgba(250, 150, 0, 1) 90%, rgba(237, 221, 83, 1) 100%);}
-.water { background: radial-gradient(circle,rgba(38, 0, 255, 1) 1%, rgba(0, 108, 250, 1) 56%, rgba(99, 190, 247, 1) 100%);}
-.electric { background: radial-gradient(circle,rgba(255, 251, 0, 1) 0%, rgba(245, 241, 47, 1) 56%, rgba(255, 255, 255, 1) 100%); }
-.grass { background: radial-gradient(circle,rgba(0, 255, 30, 1) 0%, rgba(135, 255, 147, 1) 56%, rgba(210, 247, 99, 1) 100%);}
+.fire { background-color: #E62829; }
+.water { background-color: #2980EF; }
+.electric { background-color: #FAC000; }
+.grass { background-color: #3FA129; }
 .ice { background-color: #3DCEF3; }
 .fighting { background-color: #FF8000; }
 .poison { background-color: #9141CB; }

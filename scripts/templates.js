@@ -6,8 +6,8 @@ function getPokemonCardTemplate(pokemonName, pokemonId, pokemonImage, type1, typ
                 <h2 class="card-name">${pokemonName}</h2>
                 <div class="card-main-content">
                     <div class="card-types">
-                        <span class="type-badge">${type1}</span>
-                        ${type2 ? `<span class="type-badge">${type2}</span>` : ''}
+                        <span class="type-badge ${type1}">${type1}</span>
+                        ${type2 ? `<span class="type-badge ${type2}">${type2}</span>` : ''}
                     </div>
                     <div class="card-image-container">
                         <img src="${pokemonImage}" alt="${pokemonName}">
@@ -51,7 +51,7 @@ function getPokemonBigCardTemplate(pokemonData) {
                 <div class="line"></div>
                 <div class="pokemonBigCardTypes">
                     <button id="btn-prev" class="nav-btn" onclick="previousPokemon(event)"><</button>
-                    <span class="type-badge">${types[0].type.name}</span>
+                    <span class="type-badge ${types[0].type.name}">${types[0].type.name}</span>
                     ${types[1] ? `<span class="type-badge  ${types[1].type.name}">${types[1].type.name}</span>` : ''}
                     <button id="btn-next" class="nav-btn" onclick="nextPokemon(event)">></button>
                 </div>
