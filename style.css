@@ -1,3 +1,8 @@
+@keyframes spin {
+  0% { transform: rotate(0deg); }   /* Start: 0 Grad Drehung */
+  100% { transform: rotate(360deg); } /* Ende: Eine komplette Drehung (360 Grad) */
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -38,24 +43,24 @@ nav {
 }
 
 nav img {
-  width: 40px;
+  width: 50px;
   height: auto;
 }
 
-.search-section{
-    display: flex;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    gap: 5px;
+.search-section {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  gap: 5px;
 }
 
-.searchField{
-    width: 250px;
-    height: 25px;
-    border-radius: 5px;
-    font-size: large;
-    color: rgba(255, 255, 255, 0.041);
+.searchField {
+  width: 180px;
+  height: 25px;
+  border-radius: 5px;
+  font-size: large;
+  color: black;
 }
 
 main {
@@ -94,9 +99,20 @@ main {
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.8);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
   z-index: 10000;
+  img{
+    width: 100px;
+  }
+}
+
+.loading-icon {
+  width: 100px;
+  height: auto;
+  animation: spin 0.5s linear infinite; 
 }
 
 .loading-text {
@@ -136,11 +152,10 @@ main {
   border-radius: 20px;
 }
 
-.pokemonCardInsert{
-    width: 80%;
-    height: auto;
-    /* padding: 20px; */
-    border-radius: 20px;
+.pokemonCardInsert {
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
 }
 
 .card-id {
@@ -189,6 +204,26 @@ main {
   filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
 }
 
+.search-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  gap: 30px;
+  font-size: 30px;
+  img {
+    width: 280px;
+  }
+  color: black;
+}
+
 footer {
   max-width: 1440px;
   width: 100%;
@@ -200,3 +235,5 @@ footer {
   justify-content: center;
   font-size: 25px;
 }
+
+
