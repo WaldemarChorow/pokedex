@@ -1,6 +1,10 @@
 @keyframes spin {
-  0% { transform: rotate(0deg); }   /* Start: 0 Grad Drehung */
-  100% { transform: rotate(360deg); } /* Ende: Eine komplette Drehung (360 Grad) */
+  0% {
+    transform: rotate(0deg);
+  } /* Start: 0 Grad Drehung */
+  100% {
+    transform: rotate(360deg);
+  } /* Ende: Eine komplette Drehung (360 Grad) */
 }
 
 body {
@@ -104,7 +108,7 @@ main {
   align-items: center;
   gap: 20px;
   z-index: 10000;
-  img{
+  img {
     width: 100px;
   }
 }
@@ -112,7 +116,7 @@ main {
 .loading-icon {
   width: 100px;
   height: auto;
-  animation: spin 0.5s linear infinite; 
+  animation: spin 0.5s linear infinite;
 }
 
 .loading-text {
@@ -235,5 +239,3 @@ footer {
   justify-content: center;
   font-size: 25px;
 }
-
-

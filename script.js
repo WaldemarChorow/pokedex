@@ -37,7 +37,6 @@ async function renderSinglePokemon(url){
     }
     let pokemonCardHtml = getPokemonCardTemplate(pokemonDetail.name, pokemonDetail.id, pokemonDetail.sprites.front_default, type1, type2);
     document.getElementById('pokedex').innerHTML += pokemonCardHtml;
-    console.log(pokemonDetail);
 }
 
 loadPokemons();
@@ -55,16 +54,15 @@ async function fetchPokemonData(id){
 }
 
 function preparePokemonData(pokemonDetail){
-   
     return {name:pokemonDetail.name,
-            id:pokemonDetail.id, 
-            url:pokemonDetail.sprites.other['official-artwork'].front_default, 
-            types:pokemonDetail.types,
-            height:pokemonDetail.height, 
-            weight:pokemonDetail.weight,
-            moves:pokemonDetail.moves,
-            stats:pokemonDetail.stats
-        }
+        id:pokemonDetail.id, 
+        url:pokemonDetail.sprites.other['official-artwork'].front_default, 
+        types:pokemonDetail.types,
+        height:pokemonDetail.height, 
+        weight:pokemonDetail.weight,
+        moves:pokemonDetail.moves,
+        stats:pokemonDetail.stats
+    }
 }
 
  async function openOverlay(id){

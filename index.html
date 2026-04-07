@@ -1,47 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokedex</title>
-    <link rel="shortcut icon" href="assets/img/alanyadk-pokemon-1536849_640.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styles/buttons.css">
-    <link rel="stylesheet" href="styles/fonts.css">
-    <link rel="stylesheet" href="styles/elementColors.css">
-    <link rel="stylesheet" href="styles/overlay.css">
-
-</head>
+    <link
+      rel="shortcut icon"
+      href="assets/img/alanyadk-pokemon-1536849_640.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/buttons.css" />
+    <link rel="stylesheet" href="styles/fonts.css" />
+    <link rel="stylesheet" href="styles/elementColors.css" />
+    <link rel="stylesheet" href="styles/overlay.css" />
+  </head>
   <body>
     <section id="loading-screen" class="loading-bg d-none">
-        <img src="assets/img/alanyadk-pokemon-1536849_640.png" alt="loading pokeball" class="loading-icon">
-        <h2 class="loading-text">Load Pokémons. Pleace wait!</h2>
+      <img
+        src="assets/img/alanyadk-pokemon-1536849_640.png"
+        alt="loading pokeball"
+        class="loading-icon"
+      />
+      <h2 class="loading-text">Load Pokémons. Pleace wait!</h2>
     </section>
     <section id="search-screen" class="search-screen d-none">
-        <img src="assets/img/succo-pokemon-1574648.svg" alt="no find pokemon picture">
-        <h2>Pokémon not found!</h2>
+      <img
+        src="assets/img/succo-pokemon-1574648.svg"
+        alt="no find pokemon picture"
+      />
+      <h2>Pokémon not found!</h2>
     </section>
-     <header>
+    <header>
       <nav>
-        <h1>P<img src="assets/img/alanyadk-pokemon-1536848_1920.png" />KÈDEX</h1>
-            <div class="search-section">
-                <input id="searchField" class="searchField" placeholder="Find the Pokemon...." type="text" minlength="3">
-                <button onclick="searchPokemon()" class="searchPokemon-btn">Search</button>
-            </div>        
+        <h1>
+          P<img src="assets/img/alanyadk-pokemon-1536848_1920.png" />KÈDEX
+        </h1>
+        <div class="search-section">
+          <input
+            id="searchField"
+            class="searchField"
+            placeholder="Find the Pokemon...."
+            type="text"
+            minlength="3"
+            onkeydown="if (event.key === 'Enter') searchPokemon();"
+          />
+          <button onclick="searchPokemon()" class="searchPokemon-btn">
+            Search
+          </button>
+        </div>
       </nav>
     </header>
     <main>
-        <section id="pokedex"></section>
-        <button id="btn-load-more" class="btn-moreLoad" onclick="loadMorePokemons()">Load more Pokémons</button>
-        <button id="btn-back" class="btn-moreLoad d-none" onclick="closeSearch()">Back to all Pokémons</button>
+      <section id="pokedex"></section>
+      <button
+        id="btn-load-more"
+        class="btn-moreLoad"
+        onclick="loadMorePokemons()"
+      >
+        Load more Pokémons
+      </button>
+      <button id="btn-back" class="btn-moreLoad d-none" onclick="closeSearch()">
+        Back to all Pokémons
+      </button>
     </main>
-    <footer>
-        © copyright by Waldemar Chorow
-    </footer>
+    <footer>© copyright by Waldemar Chorow</footer>
     <section id="overlay" class="overlay-bg d-none">
-        
-        <div id="overlay-content"></div>
-        
+      <div id="overlay-content"></div>
     </section>
     <script src="scripts/templates.js"></script>
     <script src="script.js"></script>

@@ -1,6 +1,6 @@
 @font-face {
-    font-family: GillSans Condensed;
-    src: url(../assets/fonts/gill-sans-2/GillSans\ Condensed.otf);
+  font-family: GillSans Condensed;
+  src: url(../assets/fonts/gill-sans-2/GillSans\ Condensed.otf);
 }
 
 .text-capitalize {
@@ -14,11 +14,11 @@ h1 {
   margin: 0 0;
 }
 
-h2{
-    padding: 0;
-    margin: 0;
+h2 {
+  padding: 0;
+  margin: 0;
 }
 
-span{
-    font-size: 16px;
+span {
+  font-size: 16px;
 }
